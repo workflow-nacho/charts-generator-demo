@@ -28,9 +28,9 @@ jobs:
           python update.py
 
       #- name: execute py script query_data.py # run the run.py to get the latest data
-        #run: |
-          #python scripts/query_data.py
+      #run: |
+      #python scripts/query_data.py
 
-      #- name: execute py script bars.py # run the run.py to create plot and generate .png
-        #run: |
-          #python scripts/bars.py
+      - name: execute py script bars.py # run the run.py to create plot and generate .png
+        run: |
+          python scripts/bars.py
