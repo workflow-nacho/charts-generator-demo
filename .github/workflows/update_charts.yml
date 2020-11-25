@@ -12,21 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps: 
-      - uses: actions/checkout@v1 # checkout the repository content to github runner.
       - name: Checkout repository content
-        uses: ./.github/actions/action.yml
-
-      - name: Setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8 # install the python needed
-        
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          branch: update-charts
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v1 # checkout the repository content to github runner.
 
       - name: Update-charts
         uses: ./github/actions/update-charts
-        id: dataChart
