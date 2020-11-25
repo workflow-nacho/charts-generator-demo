@@ -1,0 +1,11 @@
+name: "Update charts and create data.csv"
+
+description: "Get external data with Github actions"
+
+output:
+  data:
+    description: Resulting data covid data from https://api.covid19india.org/csv/latest/state_wise.csv api
+    
+runs:
+  using: "docker"
+  image: "Dockerfile"
