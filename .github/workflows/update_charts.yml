@@ -12,8 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps: 
+      - uses: actions/checkout@v1 # checkout the repository content to github runner.
       - name: Checkout repository content
-        uses: actions/checkout@v1 # checkout the repository content to github runner.
+        uses: ./.github/actions/action
 
       - name: Setup python
         uses: actions/setup-python@v2
