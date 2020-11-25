@@ -21,7 +21,7 @@ jobs:
           python-version: 3.8 # install the python needed
         
       - name: Push changes
-        uses: actions/github-push-action@master
+        uses: ad-m/github-push-action@master
         with:
           branch: develop
           github_token: ${{ secrets.GITHUB_TOKEN }}
