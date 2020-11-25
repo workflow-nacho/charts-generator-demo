@@ -23,7 +23,7 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: develop
+          branch: update-charts
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update-charts
