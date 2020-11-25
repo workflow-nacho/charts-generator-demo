@@ -11,13 +11,7 @@ jobs:
     name: Running Units Tests
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: JCofman/webPagetestAction@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TEST_URL: https://google.com
-          WEBPAGETEST_API_KEY: ${{ secrets.WEBPAGETEST_API_KEY }}
-          
+    steps: 
       - name: Checkout repository content
         uses: actions/checkout@v1 # checkout the repository content to github runner.
 
@@ -25,6 +19,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8 # install the python needed
+        
+      - name: Push changes
+        uses: actions/github-push-action@master
+        with:
+          branch: develop
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update-charts
         uses: ./github/actions/update-charts
