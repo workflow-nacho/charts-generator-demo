@@ -1,9 +1,10 @@
 name: update data and chart
 
 on:
-  push:
+  pull_request:
     branches:
-      - main
+      - update-charts
+    types: [labeles]
       #schedule:
       #- cron: "0 0 * * *" # runs at 00:00 UTC everyday
 
@@ -21,16 +22,6 @@ jobs:
         with:
           python-version: 3.8 # install the python needed
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          python update.py
-
-      #- name: execute py script query_data.py # run the run.py to get the latest data
-      #run: |
-      #python scripts/query_data.py
-
-      - name: execute py script bars.py # run the run.py to create plot and generate .png
-        run: |
-          python scripts/bars.py
+      - name: Update-charts
+        uses: ./github/actions/update-charts
+        id: dataChart
