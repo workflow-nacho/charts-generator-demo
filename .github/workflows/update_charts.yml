@@ -1,6 +1,9 @@
 name: update data and chart
 
 on:
+  push:
+    branches: 
+      - update-charts
   pull_request:
     types: [labeled]
       #schedule:
@@ -16,4 +19,4 @@ jobs:
         uses: actions/checkout@v1 # checkout the repository content to github runner.
 
       - name: Update-charts
-        uses: ./github/actions/update-charts
+        uses: actions/setup-node@update-charts
