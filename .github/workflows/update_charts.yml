@@ -21,17 +21,22 @@ jobs:
         uses: actions/checkout@v1 # checkout the repository content to github runner.
       - name: Update-charts
         uses: ./.github/actions/update-charts
+        
+      - uses: actions/upload-artifact@master
+        with:
+          name: Running Unit Tests artifacts
+          path: public/
       
         
-  create-bar-chart:
-    needs: build
-    name: Run python file to create a bar chart
-    runs-on: ubuntu-latest
-    
-    steps: 
-      - name: Checkout repository content
-        uses: actions/checkout@v1 # checkout the repository content to github runner.
-      - name: Generate-charts
-        uses: ./.github/actions/generate-charts
+  #create-bar-chart:
+  #  needs: build
+  #  name: Run python file to create a bar chart
+  #  runs-on: ubuntu-latest
+  #  
+  #  steps: 
+  #    - name: Checkout repository content
+  #      uses: actions/checkout@v1 # checkout the repository content to github runner.
+  #    - name: Generate-charts
+  #      uses: ./.github/actions/generate-charts
     
 
