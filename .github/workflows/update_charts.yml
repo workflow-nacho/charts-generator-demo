@@ -16,7 +16,7 @@ jobs:
 
     steps: 
       - name: Checkout repository content
-        uses: actions/checkout@v2 # checkout the repository content to github runner.
+        uses: actions/checkout@v1 # checkout the repository content to github runner.
       - name: Update-charts
         uses: ./.github/actions/update-charts
 
