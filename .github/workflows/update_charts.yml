@@ -22,16 +22,16 @@ jobs:
       - name: Update-charts
         uses: ./.github/actions/update-charts
       
-      - name: Set up Python
-        uses: actions/setup-python@v1
-        with:
-          python-version: '3.x'
-          
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          python scripts/bars.py
+      #- name: Set up Python
+      #  uses: actions/setup-python@v1
+      #  with:
+      #    python-version: '3.x'
+      #    
+      #- name: Install dependencies
+      #  run: |
+      #    python -m pip install --upgrade pip
+      #    pip install -r requirements.txt
+      #    python scripts/bars.py
         
   create-bar-chart:
     needs: build
