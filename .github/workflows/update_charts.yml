@@ -5,6 +5,7 @@ on:
     branches: 
       - update-charts
       - main
+      - generate-charts
   pull_request:
     types: [labeled]
       #schedule:
@@ -26,21 +27,10 @@ jobs:
     name: Run python file to create a bar chart
     runs-on: ubuntu-latest
     
-    steps:
+    steps: 
       - name: Checkout repository content
-        uses: actions/checkout@v2
-        
-      - name: Setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-         
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          
-      - name: execute py script bars.py
-        run: python scripts/bars.py
+        uses: actions/checkout@v1 # checkout the repository content to github runner.
+      - name: Generate-charts
+        uses: ./.github/actions/generate-charts
     
 
