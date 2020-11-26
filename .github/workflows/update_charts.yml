@@ -31,7 +31,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          python src/bars.py
+          python scripts/bars.py
         
   create-bar-chart:
     needs: build
