@@ -1,0 +1,11 @@
+name: "Create charts to generate a png figure"
+
+description: "Generate chart from data.csv"
+
+output:
+  chart:
+    description: Resulting chart figure from data.csv by requesting covid data from https://api.covid19india.org/csv/latest/state_wise.csv api
+    
+runs:
+  using: "docker"
+  image: "Dockerfile"
