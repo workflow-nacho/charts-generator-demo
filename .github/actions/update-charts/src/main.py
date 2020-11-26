@@ -1,5 +1,6 @@
 import os
 import requests
+from bars import analyze
 
 endpoint = "https://api.covid19india.org/csv/latest/state_wise.csv"
 
@@ -12,6 +13,7 @@ def write_data():
         f.write(get_data())
 
 write_data()
+analize()
 
 # Set the data-output of the action as the value of get_data response
 print(f"::set-output name=data::get_data()")
