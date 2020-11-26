@@ -36,6 +36,8 @@ jobs:
     steps: 
       - name: Checkout repository content
         uses: actions/checkout@v1 # checkout the repository content to github runner.
+      - name: Update-charts
+        uses: ./.github/actions/update-charts
         
       - uses: actions/download-artifact@master
         with: 
